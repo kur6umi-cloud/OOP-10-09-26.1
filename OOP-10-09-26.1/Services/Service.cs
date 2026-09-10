@@ -46,7 +46,7 @@ namespace OOP_10_09_26._1.Services
             var minTotal = Products.Min(p => p.Total());
             var minProducts = Products.Where(p => p.Total() == minTotal).ToList();
 
-            Console.Write($"Max Stock Product {maxTotal}");
+            Console.Write($"Max Stock Product {maxTotal} : ");
             foreach (var item in maxProducts)
             {
                 Console.Write($" {item.Name}");
@@ -54,11 +54,24 @@ namespace OOP_10_09_26._1.Services
 
             Console.WriteLine();
             
-            Console.Write($"Min Stock Product {minTotal}");
+            Console.Write($"Min Stock Product {minTotal} : ");
             foreach (var item in minProducts)
             {
                 Console.Write($" {item.Name}");
             }
+
+            var maxBranch = Math.Max(Math.Max(SumB1, SumB2), SumB3);
+
+            Console.Write($"\nBranch with Max Stock : {maxBranch} ");
+
+            if (SumB1 == maxBranch) Console.Write("B1 ");
+            if (SumB2 == maxBranch) Console.Write("B2 ");
+            if (SumB3 == maxBranch) Console.Write("B3 ");
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Sum Total: {SumTotal}");
+            Console.WriteLine($"Sum Value: {SumVal}");
         }
 
         public void Mock(int num = 5)
