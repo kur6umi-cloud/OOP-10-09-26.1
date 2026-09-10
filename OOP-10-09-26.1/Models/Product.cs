@@ -13,9 +13,7 @@ namespace OOP_10_09_26._1.Models
         public int B2 { get; set; }
         public int B3 { get; set; }
 
-        public double Total()
-        { 
-            return B1 + B2 + B3;
-        }
+        public double Total() => B1 * B2 + B3;
+        public double Value() => Total() * (double)Price;
     }
 }

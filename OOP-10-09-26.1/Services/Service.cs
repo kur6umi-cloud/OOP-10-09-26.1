@@ -18,9 +18,23 @@ namespace OOP_10_09_26._1.Services
 
         public void Display()
         {
+            Console.WriteLine($"{"ID",5} {"Name",10} {"Price",5} + " +
+                $"{"B1",4} {"B2",4} {"B3",4} {"Total",6} {"Value",12:N0}");
+
+            Console.WriteLine(new string('-', 60));
+
             foreach (var item in Products)
             {
-                Console.WriteLine($"{item.ID,5} {item.Name,10} {item.Price,5} {item.B1,4} {item.B2,4} {item.B3,4}");
+                Console.WriteLine($"{item.ID,5} {item.Name,10} {item.Price,5} + " +
+                    $"{item.B1,4} {item.B2,4} {item.B3,4} {item.Total(),6} {item.Value(),12:N0}");
+
+                var SumB1 = Products.Sum(p => p.B1);
+                var SumB2 = Products.Sum(p => p.B2);
+                var SumB3 = Products.Sum(p => p.B3);
+                var SumTotal = Products.Sum(p => p.Total());
+                var SumVal = Products.Sum(p => p.Value());
+                Console.WriteLine($"{"TOTAL",10} {SumB1, 20} {SumB2, 4} {SumB3, 4} " +
+                    $"{SumTotal,6} {SumVal,12:N0}");
             }
         }
 
